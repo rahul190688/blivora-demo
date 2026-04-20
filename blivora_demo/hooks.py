@@ -10,10 +10,18 @@ app_license = "MIT"
 # app_include_js = "/assets/blivora_demo/js/blivora_demo.js"
 
 # Installation
-# after_install = "blivora_demo.install.after_install"
+after_install = "blivora_demo.blivora_demo.install.after_install"
 
 # Desk Notifications
 # notification_config = "blivora_demo.notifications.get_notification_config"
+
+# Document Events
+doc_events = {
+	"HD Ticket": {
+		"after_insert": "blivora_demo.blivora_demo.api.auto_assignment.on_ticket_create",
+		"on_update": "blivora_demo.blivora_demo.api.auto_assignment.on_ticket_update",
+	}
+}
 
 # Scheduled Tasks
 # scheduler_events = {
